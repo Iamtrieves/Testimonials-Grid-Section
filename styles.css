@@ -1,0 +1,140 @@
+:root {
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+    --weight1: 200;
+    --weight2: 600;
+}
+body {
+    font-size: 13px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background: var(--Light-grayish-blue);
+    color: white;
+}
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.attribution { 
+    font-size: 11px; text-align: center;
+    color: hsl(228, 45%, 44%);  
+}
+
+.container {
+    padding: 2em 1em;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+img {
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 0 0 0;
+}
+.inline {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 17px;
+    margin-left: 10px;
+}
+
+h4 {
+    margin: 15px 0;
+    font-size: 1.5em;
+    font-weight: var(--weight2);
+}
+
+.weight1 {
+    font-weight: var(--weight1);
+}
+.img-purple {
+    border: 3px solid var(--Moderate-violet);
+}
+.img-white {
+    border: 3px solid var(--White);
+}
+
+.quote {
+    border-radius: 5px;
+    margin: 2px;
+    padding: 1rem;
+}
+.white-long, .white-small {
+    color: black;
+}
+
+.purple {
+    background-image: url(/images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-color: var(--Moderate-violet);
+}
+
+.dark-gray {
+    background-color:var(--Very-dark-grayish-blue);
+}
+.white-small {
+    background-color: var(--White);
+}
+
+.black {
+    background-color: var(--Very-dark-blackish-blue);
+}
+
+.white-long {
+    background-color: var(--White);
+}
+
+@media (min-width: 800px) and (max-width: 1370px)  {
+    .container .purple {
+        grid-column: auto / span 2;
+        height: 300px;
+     }
+     .container .white-long {
+        grid-column: auto / span 4;
+        grid-row: ;
+     }
+     .container .black {
+        grid-column: auto / span 4;
+        height: 200px;
+     }
+}
+
+@media (min-width: 1370px) {
+     .container {
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        margin: 5rem 10rem;
+        grid-auto-flow: dense;
+        font-size: 1em;
+     }
+     .quote {
+        padding: 1.5rem;
+     }
+     .container .purple {
+        grid-column: span 2;
+     }
+     .container .white-long {
+        grid-column: 4;
+        grid-row: 1 / span 2;
+     }
+     .container .white-long .long {
+        margin-top: 3rem;
+        padding-bottom: 0;
+        font-size: 1em;
+     }
+     .container .black {
+        grid-column: span 2;
+     }
+}
